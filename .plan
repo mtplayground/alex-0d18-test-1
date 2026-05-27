@@ -1,0 +1,41 @@
+Architecture plan for mtplayground/alex-0d18-test-1
+
+Project shape:
+- Static browser app at the repository root.
+- No build step required for the clock itself.
+- Keep runtime code in plain JavaScript, HTML, and CSS so `index.html` can be opened directly or served by any static server.
+
+Module and file organization:
+- `index.html`
+  - Loads `styles.css`.
+  - Contains a single clock display element, expected to be `#clock`.
+  - Loads `clock.js` with `defer` so DOM setup can be simple and predictable.
+- `styles.css`
+  - Page-level centering.
+  - Large monospace clock face.
+  - Minimal responsive sizing using CSS constraints rather than JavaScript.
+- `clock.js`
+  - Exports or otherwise exposes `formatHHMMSS(date)` for tests.
+  - Owns DOM wiring after `DOMContentLoaded`.
+  - Keeps rendering separated from formatting so unit tests do not need a browser DOM.
+- Unit tests
+  - Add a JavaScript test runner only when issue #3 is implemented.
+  - Test `formatHHMMSS` with fixed `Date` instances for midnight, noon, single-digit values, and end-of-day.
+- End-to-end tests
+  - Add Playwright only when issue #5 is implemented.
+  - Load the static page, assert `#clock` matches `/^\d{2}:\d{2}:\d{2}$/`, wait about two seconds, and assert the value changes.
+
+Dependencies between issues:
+- Issue #1 creates the root static scaffold: `index.html`, `styles.css`, `clock.js`, `README.md`, and `.gitignore`.
+- Issue #2 depends on issue #1 and fills in the visual HTML/CSS clock face.
+- Issue #3 depends on issue #1 and adds the pure `formatHHMMSS(date)` function plus unit tests.
+- Issue #4 depends on issues #2 and #3 because it needs both `#clock` and `formatHHMMSS`.
+- Issue #5 depends on issue #4 because the browser test verifies the rendered clock and ticking behavior.
+
+Key design decisions:
+- Use local time from the JavaScript `Date` object, matching normal user-facing clock behavior.
+- Zero-pad with string helpers such as `padStart(2, "0")`.
+- Keep `formatHHMMSS` pure and independent from DOM access.
+- Make the tick loop render immediately on page load, then update every 1000 ms.
+- Avoid framework or bundler dependencies unless tests require package tooling.
+- If Node-based tests are introduced, use the smallest practical package setup and keep generated dependency directories ignored.
