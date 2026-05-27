@@ -17,3 +17,20 @@ if (typeof module !== "undefined" && module.exports) {
 if (typeof window !== "undefined") {
   window.formatHHMMSS = formatHHMMSS;
 }
+
+if (typeof document !== "undefined") {
+  document.addEventListener("DOMContentLoaded", () => {
+    const clockElement = document.getElementById("clock");
+
+    if (!clockElement) {
+      return;
+    }
+
+    const renderCurrentTime = () => {
+      clockElement.textContent = formatHHMMSS(new Date());
+    };
+
+    renderCurrentTime();
+    setInterval(renderCurrentTime, 1000);
+  });
+}
