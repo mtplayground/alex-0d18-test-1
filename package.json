@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "test": "node --test"
+    "test": "npm run test:unit && npm run test:e2e",
+    "test:e2e": "playwright test",
+    "test:unit": "node --test test/clock.test.js"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.60.0"
   }
 }
