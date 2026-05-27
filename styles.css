@@ -22,6 +22,65 @@ body {
   padding: 2rem;
 }
 
+.clock-stack {
+  display: grid;
+  justify-items: center;
+  gap: 1.5rem;
+}
+
+.analog-clock {
+  width: clamp(14rem, 56vw, 24rem);
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+
+.dial-face {
+  fill: rgba(255, 255, 255, 0.88);
+  stroke: rgba(17, 24, 39, 0.18);
+  stroke-width: 2;
+}
+
+.dial-ring {
+  fill: none;
+  stroke: rgba(17, 24, 39, 0.08);
+  stroke-width: 1;
+}
+
+#minute-tick-template,
+.minute-tick {
+  stroke: rgba(17, 24, 39, 0.38);
+  stroke-linecap: round;
+  stroke-width: 1.4;
+}
+
+#hour-marker-template,
+.hour-marker {
+  stroke: #2563eb;
+  stroke-linecap: round;
+  stroke-width: 3.5;
+}
+
+.roman-numeral,
+.arabic-numeral {
+  dominant-baseline: middle;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  letter-spacing: 0;
+  pointer-events: none;
+  text-anchor: middle;
+}
+
+.roman-numeral {
+  fill: #111827;
+  font-size: 0.86rem;
+}
+
+.arabic-numeral {
+  fill: #b45309;
+  font-size: 0.68rem;
+}
+
 .clock-face {
   padding: 1.25rem 1.75rem;
   border: 1px solid rgba(17, 24, 39, 0.12);
@@ -43,6 +102,33 @@ body {
 
   body {
     background: #101623;
+  }
+
+  .dial-face {
+    fill: rgba(15, 23, 42, 0.82);
+    stroke: rgba(248, 250, 252, 0.16);
+  }
+
+  .dial-ring {
+    stroke: rgba(248, 250, 252, 0.1);
+  }
+
+  #minute-tick-template,
+  .minute-tick {
+    stroke: rgba(248, 250, 252, 0.42);
+  }
+
+  #hour-marker-template,
+  .hour-marker {
+    stroke: #60a5fa;
+  }
+
+  .roman-numeral {
+    fill: #f8fafc;
+  }
+
+  .arabic-numeral {
+    fill: #fbbf24;
   }
 
   .clock-face {

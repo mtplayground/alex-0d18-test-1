@@ -9,7 +9,130 @@
   </head>
   <body>
     <main class="clock-page">
-      <div id="clock" class="clock-face" aria-label="Current time">00:00:00</div>
+      <section class="clock-stack" aria-label="Clock">
+        <svg class="analog-clock" viewBox="0 0 240 240" role="img" aria-labelledby="analog-clock-title analog-clock-desc">
+          <title id="analog-clock-title">Analog clock dial</title>
+          <desc id="analog-clock-desc">Circular analog clock face with Roman numerals on the outer ring and Arabic numerals on the inner ring.</desc>
+          <defs>
+            <line id="minute-tick-template" x1="120" y1="14" x2="120" y2="20"></line>
+            <line id="hour-marker-template" x1="120" y1="14" x2="120" y2="30"></line>
+          </defs>
+
+          <circle class="dial-face" cx="120" cy="120" r="108"></circle>
+          <circle class="dial-ring dial-ring-outer" cx="120" cy="120" r="92"></circle>
+          <circle class="dial-ring dial-ring-inner" cx="120" cy="120" r="70"></circle>
+
+          <g class="minute-ticks" aria-hidden="true">
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(0 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(6 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(12 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(18 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(24 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(30 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(36 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(42 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(48 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(54 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(60 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(66 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(72 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(78 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(84 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(90 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(96 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(102 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(108 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(114 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(120 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(126 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(132 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(138 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(144 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(150 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(156 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(162 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(168 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(174 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(180 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(186 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(192 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(198 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(204 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(210 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(216 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(222 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(228 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(234 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(240 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(246 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(252 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(258 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(264 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(270 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(276 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(282 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(288 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(294 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(300 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(306 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(312 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(318 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(324 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(330 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(336 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(342 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(348 120 120)"></use>
+            <use href="#minute-tick-template" class="minute-tick" transform="rotate(354 120 120)"></use>
+          </g>
+
+          <g class="hour-markers" aria-hidden="true">
+            <use href="#hour-marker-template" class="hour-marker" transform="rotate(0 120 120)"></use>
+            <use href="#hour-marker-template" class="hour-marker" transform="rotate(30 120 120)"></use>
+            <use href="#hour-marker-template" class="hour-marker" transform="rotate(60 120 120)"></use>
+            <use href="#hour-marker-template" class="hour-marker" transform="rotate(90 120 120)"></use>
+            <use href="#hour-marker-template" class="hour-marker" transform="rotate(120 120 120)"></use>
+            <use href="#hour-marker-template" class="hour-marker" transform="rotate(150 120 120)"></use>
+            <use href="#hour-marker-template" class="hour-marker" transform="rotate(180 120 120)"></use>
+            <use href="#hour-marker-template" class="hour-marker" transform="rotate(210 120 120)"></use>
+            <use href="#hour-marker-template" class="hour-marker" transform="rotate(240 120 120)"></use>
+            <use href="#hour-marker-template" class="hour-marker" transform="rotate(270 120 120)"></use>
+            <use href="#hour-marker-template" class="hour-marker" transform="rotate(300 120 120)"></use>
+            <use href="#hour-marker-template" class="hour-marker" transform="rotate(330 120 120)"></use>
+          </g>
+
+          <g class="roman-numerals" aria-label="Roman numerals I through XII">
+            <text class="roman-numeral" x="120" y="36">XII</text>
+            <text class="roman-numeral" x="162" y="47">I</text>
+            <text class="roman-numeral" x="193" y="78">II</text>
+            <text class="roman-numeral" x="204" y="120">III</text>
+            <text class="roman-numeral" x="193" y="162">IV</text>
+            <text class="roman-numeral" x="162" y="193">V</text>
+            <text class="roman-numeral" x="120" y="204">VI</text>
+            <text class="roman-numeral" x="78" y="193">VII</text>
+            <text class="roman-numeral" x="47" y="162">VIII</text>
+            <text class="roman-numeral" x="36" y="120">IX</text>
+            <text class="roman-numeral" x="47" y="78">X</text>
+            <text class="roman-numeral" x="78" y="47">XI</text>
+          </g>
+
+          <g class="arabic-numerals" aria-label="Arabic numerals 1 through 12">
+            <text class="arabic-numeral" x="120" y="58">12</text>
+            <text class="arabic-numeral" x="151" y="66">1</text>
+            <text class="arabic-numeral" x="174" y="89">2</text>
+            <text class="arabic-numeral" x="182" y="120">3</text>
+            <text class="arabic-numeral" x="174" y="151">4</text>
+            <text class="arabic-numeral" x="151" y="174">5</text>
+            <text class="arabic-numeral" x="120" y="182">6</text>
+            <text class="arabic-numeral" x="89" y="174">7</text>
+            <text class="arabic-numeral" x="66" y="151">8</text>
+            <text class="arabic-numeral" x="58" y="120">9</text>
+            <text class="arabic-numeral" x="66" y="89">10</text>
+            <text class="arabic-numeral" x="89" y="66">11</text>
+          </g>
+        </svg>
+
+        <div id="clock" class="clock-face" aria-label="Current time">00:00:00</div>
+      </section>
     </main>
   </body>
 </html>
